@@ -34,10 +34,10 @@ m_bantuan = '  <b>Bot Bantuan</b> \n\n'\
     '\U000026D4 <b>Berhenti = </b> <code>Menghentikan dialog</code>\n\n'\
     '🤝 <b>Share Profile = </b> <code>mengirimkan username Telegram ke partner</code>\n\n'\
     '\U0001F4BB <b>Bantuan = </b> <code>Cara menggunakan bot</code>\n\n'\
-    '\U0001F6A7 <b>Syarat & Ketentuan = </b> <code>Aturan penggunaan bot</code>\n\n'\
+    '\U0001F6A7 <b>Rules = </b> <code>Aturan penggunaan bot</code>\n\n'\
 
 m_rules = '<b>Rules - Anonim Bot </b>\n\n' \
-          '<i>Menggunakan bot ini berarti menaati aturan yaa..</i>\n'\
+          '<i>Menggunakan bot ini berarti menaati aturan yaa..</i>\n\n'\
           '1.Bot Anonim ini tidak menyimpan data diri pribadi, semua isi chat disimpan dalam akun telegram masing-masing\n\n'\
           '2.Dilarang Keras mengirimkan <b> DATA PRIBADI, PASSWORD, DSB </b>, admin tidak akan bertanggung jawab atas apa yang bagikan.\n\n' \
           '3.Gunakanlah Bahasa yang Sopan\n\n'\
