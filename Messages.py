@@ -1,4 +1,4 @@
-m_start = '<b>Hai!🙂, Selamat datang di Anonim Chat Polines</b>\n'
+m_start = 'Hai!🙂, Selamat datang di Anonim Chat Polines\n'
 
 m_is_not_free_users = 'Sedang mencari lawan bicara.. 😊'
 
