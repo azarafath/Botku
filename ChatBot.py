@@ -22,10 +22,10 @@ def button_start():
     types.ReplyKeyboardRemove()
 
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=False, resize_keyboard=True)
-    markup.add(search_str)
+    markup.add(cari_str)
     markup.add(stop_str)
-    markup.add(help_str)
-    markup.add(terms_str)
+    markup.add(bantuan_str)
+    markup.add(rules_str)
     return markup
 
 def skip_stop():
@@ -38,11 +38,11 @@ def skip_stop():
 
     return markup
 
-def search_stop():
+def cari_stop():
     types.ReplyKeyboardRemove()
 
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=False, resize_keyboard=True)
-    markup.add(search_str)
+    markup.add(cari_str)
     markup.add(stop_str)
 
     return markup
@@ -67,7 +67,7 @@ def start(message):
     bot.send_message(self_id, m_start, reply_markup=button_start())
     # bot.send_message(self_id, m_start)
 
-def search(call):
+def cari(call):
     user_id = call.chat.id
     user_to_id = None
 
@@ -113,7 +113,7 @@ def stop(message):
     
     if message.chat.id in communications:
         user_to_id = communications[user_id]['UserTo']
-        bot.send_message(user_to_id, m_disconnect_user, reply_markup=search_stop())
+        bot.send_message(user_to_id, m_disconnect_user, reply_markup=cari_stop())
         
 
         delete_info(user_to_id)
@@ -135,17 +135,19 @@ def skip(message):
         bot.send_message(user_to_id, m_disconnect_user, reply_markup=types.ReplyKeyboardRemove())
 
         delete_info(user_to_id)
-        bot.send_message(user_to_id, m_play_again, reply_markup=search_stop())
+        bot.send_message(user_to_id, m_play_again, reply_markup=cari_stop())
 
-        search(message)
+        cari(message)
 
-def helps(message):
+def bantuan(message):
     user_id = message.chat.id
-    bot.send_message(user_id, m_help, parse_mode=telegram.ParseMode.HTML)
+    bot.send_message(user_id, m_bantuan, parse_mode=telegram.ParseMode.HTML)
 
-def terms(message):
+def rule
+
+s(message):
     user_id = message.chat.id
-    bot.send_message(user_id, m_terms, parse_mode=telegram.ParseMode.HTML)
+    bot.send_message(user_id, m_rules, parse_mode=telegram.ParseMode.HTML)
 
 def sharelink(message):
     user_id = message.chat.id
@@ -165,9 +167,9 @@ def sharelink(message):
 def echo(message):
     start(message)
 
-@bot.message_handler(commands=['search'])
+@bot.message_handler(commands=['cari'])
 def echo(call):
-    search(call)
+    cari(call)
 
 @bot.message_handler(commands=['skip'])
 def echo(message):
@@ -177,13 +179,13 @@ def echo(message):
 def echo(message):
     stop(message)
 
-@bot.message_handler(commands=['help'])
+@bot.message_handler(commands=['bantuan'])
 def echo(message):
-    helps(message)
+    bantuan(message)
 
-@bot.message_handler(commands=['terms'])
+@bot.message_handler(commands=['rules'])
 def echo(message):
-    terms(message)
+    rules(message)
 
 @bot.message_handler(commands=['sharelink'])
 def echo(message):
@@ -193,9 +195,9 @@ def echo(message):
 def echo(message):
     start(message)
 
-@bot.message_handler(func=lambda call: call.text == search_str)
+@bot.message_handler(func=lambda call: call.text == cari_str)
 def echo(message):
-    search(message)
+    cari(message)
 
 @bot.message_handler(func=lambda call: call.text == skip_str)
 def echo(message):
@@ -205,13 +207,13 @@ def echo(message):
 def echo(message):
     stop(message)
 
-@bot.message_handler(func=lambda call: call.text == help_str)
+@bot.message_handler(func=lambda call: call.text == bantuan_str)
 def echo(message):
-    helps(message)
+    bantuan(message)
 
-@bot.message_handler(func=lambda call: call.text == terms_str)
+@bot.message_handler(func=lambda call: call.text == rules_str)
 def echo(message):
-    terms(message)
+    rules(message)
 
 @bot.message_handler(func=lambda call: call.text == sharelink_str)
 def echo(message):
