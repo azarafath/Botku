@@ -6,7 +6,7 @@ from Messages import *
 from dataEgine import *
 
 
-access_token = '1408901119:AAGaFb50LiOTZiJv4FqUmAgtSk4v6JG-qqM'
+access_token = '1408901119:AAGVzz_QhHhruIeDtV6zamkIgWSuCk18PrE'
 bot = telebot.TeleBot(access_token)
 
 # ================== BUTTON AREA =====================
