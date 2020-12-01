@@ -143,9 +143,7 @@ def bantuan(message):
     user_id = message.chat.id
     bot.send_message(user_id, m_bantuan, parse_mode=telegram.ParseMode.HTML)
 
-def rule
-
-s(message):
+def rules(message):
     user_id = message.chat.id
     bot.send_message(user_id, m_rules, parse_mode=telegram.ParseMode.HTML)
 
