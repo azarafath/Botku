@@ -1,4 +1,4 @@
-# Anonymous-chat-telegram
+# KEPO YAAAA
 Bot uses several libraries:
 * [TeleBot](https://github.com/eternnoir/pyTelegramBotAPI) - API Telegram for python
 * [SQLAlchemy](http://www.sqlalchemy.org) - Interaction with the database
