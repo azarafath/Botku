@@ -27,7 +27,7 @@ class TreeNode:
     def has_any_children(self):
         return self.leftChild or self.rightChild
 
-    def has_all_children(self):
+    def has_both_children(self):
         return self.leftChild and self.rightChild
 
     def replace_data(self, key, val, lc, rc):
