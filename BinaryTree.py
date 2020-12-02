@@ -52,25 +52,27 @@ class TreeNode:
                     if elem is not None:
                         yield elem
                         
-     def findSuccessor(self):
-        succ = None
-        if self.hasRightChild():
-            succ = self.rightChild.findMin()
+                        
+class BinarySearchTree(TreeNode):
+    
+     def put(self,key,val):
+        if self.root:
+            self._put(key,val,self.root)
         else:
-            if self.parent:
-                if self.isLeftChild():
-                    succ = self.parent
-                else:
-                    self.parent.rightChild = None
-                    succ = self.parent.findSuccessor()
-                    self.parent.rightChild = self
-        return succ
+            self.root = BinarySearchTree(key,val)  ### switched TreeNode for BinarySearchTree
+        self.size = self.size + 1
 
-    def findMin(self):
-        current = self
-        while current.hasLeftChild():
-            current = current.leftChild
-        return current
+    def _put(self,key,val,currentNode):
+        if key < currentNode.key:
+            if currentNode.hasLeftChild():
+                self._put(key,val,currentNode.leftChild)
+            else:
+                currentNode.leftChild = BinarySearchTree(key,val,parent=currentNode)  ### switched TreeNode for BinarySearchTree
+        else:
+            if currentNode.hasRightChild():
+                self._put(key,val,currentNode.rightChild)
+            else:
+                currentNode.rightChild = BinarySearchTree(key,val,parent=currentNode)  ### switched TreeNode for BinarySearchTree
 
 
 class BinaryTree:
