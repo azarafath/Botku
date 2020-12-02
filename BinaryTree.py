@@ -51,30 +51,7 @@ class TreeNode:
                 for elem in self.rightChild:
                     if elem is not None:
                         yield elem
-                        
-                        
-class BinarySearchTree(TreeNode):
-    
-     def put(self,key,val):
-        if self.root:
-            self._put(key,val,self.root)
-        else:
-            self.root = BinarySearchTree(key,val)  ### switched TreeNode for BinarySearchTree
-        self.size = self.size + 1
-
-    def _put(self,key,val,currentNode):
-        if key < currentNode.key:
-            if currentNode.hasLeftChild():
-                self._put(key,val,currentNode.leftChild)
-            else:
-                currentNode.leftChild = BinarySearchTree(key,val,parent=currentNode)  ### switched TreeNode for BinarySearchTree
-        else:
-            if currentNode.hasRightChild():
-                self._put(key,val,currentNode.rightChild)
-            else:
-                currentNode.rightChild = BinarySearchTree(key,val,parent=currentNode)  ### switched TreeNode for BinarySearchTree
-
-
+                                                
 class BinaryTree:
     def __init__(self):
         self.root = None
